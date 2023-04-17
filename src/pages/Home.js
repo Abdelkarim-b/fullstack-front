@@ -13,7 +13,7 @@ export default function Home() {
   {
     console.log("code with karim")
     const result = await axios.get("http://localhost:8080/users");
-    console.log('loadUsers result ====>', result.data );
+    //console.log('loadUsers result ====>', result.data );
     setUsers(result.data);
   }
  
@@ -42,9 +42,9 @@ export default function Home() {
                   <td>{user.username}</td>
                   <td>{user.email}</td>
                   <td>
-                    <button type="button" class="btn btn-primary mx-2">View</button>
-                    <button type="button" class="btn btn-outline-primary mx-2">Edit</button>
-                    <button type="button" class="btn btn-danger mx-2">Delete</button>
+                    <button type="button" className="btn btn-primary mx-2">View</button>
+                    <button type="button" className="btn btn-outline-primary mx-2">Edit</button>
+                    <button type="button" className="btn btn-danger mx-2">Delete</button>
 
 
                   </td>
