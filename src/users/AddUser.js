@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { Button } from 'bootstrap'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
  
  export default function AddUser() {
 
@@ -12,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
      email: ""
   });
 
-  const {name, username, email} = user;
+  //const {name, username, email} = user;
 
   const onInputChage = (e)=>{
     setUser({...user, [e.target.name]:e.target.value})
@@ -36,7 +35,7 @@ import { useNavigate } from 'react-router-dom';
                   className="form-control"
                   placeholder="Enter your name" 
                   name='name'
-                  value={name}
+                  value={user.name}
                   onChange={(e)=>{onInputChage(e)}}
                 />
               </div>
@@ -48,7 +47,7 @@ import { useNavigate } from 'react-router-dom';
                   className="form-control"
                   placeholder="Enter your username"
                   name='username'
-                  value={username}
+                  value={user.username}
                   onChange={(e)=>{onInputChage(e)}}
                 />
               </div>
@@ -60,13 +59,13 @@ import { useNavigate } from 'react-router-dom';
                   className="form-control"
                   placeholder="Enter your E-mail adresse"
                   name='email'
-                  value={email}
+                  value={user.email}
                   onChange={(e)=>{onInputChage(e)}}
                 />
               </div>
                 
               <button type="submit" className="btn btn-outline-primary">Submit</button>
-              <button type="button" className="btn btn-outline-danger mx-2">Cancel</button>
+              <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>
            </form>
          </div>
          

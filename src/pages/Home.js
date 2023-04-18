@@ -5,9 +5,15 @@ export default function Home() {
 
   const [users, setUsers]=useState([])
 
-  useEffect(()=>{
+  // useEffect(()=>{
+  //   loadUsers()
+  // }, [])
+
+  // we use useEffect below (without empty array) to avoid the problem of non-loading of newly created users
+  useEffect(() =>
+  {
     loadUsers()
-  }, [])
+  })
 
   const loadUsers = async () =>
   {
