@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() =>
   {
     loadUsers()
-  })
+  }) //execute every time when state change
 
   const loadUsers = async () =>
   {
