@@ -22,7 +22,7 @@ export default function EditUser()
   useEffect(() =>
   {
     loadUserToEdit()
-  }) //execute every time when state change
+  }, [])
 
   const loadUserToEdit = async () =>
   {
