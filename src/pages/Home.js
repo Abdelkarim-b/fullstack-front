@@ -24,6 +24,12 @@ export default function Home() {
     setUsers(result.data);
   }
  
+  const deleteUser = async (id) =>
+  {
+    await axios.delete(`http://localhost:8080/user/${id}`);
+    //loadUsers(); not necessary because useEffect above do the loading ussers when state changed
+  }
+
   return (
 
     <div className="container">
@@ -56,7 +62,13 @@ export default function Home() {
                     >
                       Edit
                     </Link>
-                    <button type="button" className="btn btn-danger mx-2">Delete</button>
+                    <button
+                      type="button"
+                      className="btn btn-danger mx-2"
+                      onClick={() => deleteUser(user.id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
 

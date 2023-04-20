@@ -21,10 +21,10 @@ export default function EditUser()
 
   useEffect(() =>
   {
-    loadUserToEdit()
+    loadUser()
   }, [])
 
-  const loadUserToEdit = async () =>
+  const loadUser = async () =>
   {
     const result = await axios.get(`http://localhost:8080/user/${id}`);
     setUser(result.data);
